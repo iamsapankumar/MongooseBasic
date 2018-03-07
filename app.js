@@ -100,6 +100,7 @@ car.set({
     year:2000
 })
 car.save((err, doc)=>{
+    if(err) return console.log(err)
     console.log(doc)
 })
 })
