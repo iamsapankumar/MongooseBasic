@@ -19,14 +19,22 @@ const carSchema = new schema({
     avail: Boolean
 })
 const Car = mongoose.model('Car', carSchema)
-const addCar = new Car({
-    brand: "Ford",
+/*const addCar = new Car({
+    brand: "BMW",
     model: "V2s",
     year: 2018,
     avail: true
-
 })
 addCar.save((err, doc)=>{
     if(err) return console.log(err)
+    console.log(doc)
+})*/
+/*
+Car.find((err, doc)=>{
+    if(err) return console.log(err);
+    console.log(doc)
+})*/
+Car.find({brand:"BMW"},(err, doc)=>{
+    if(err) return console.log(err);
     console.log(doc)
 })
