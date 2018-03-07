@@ -69,10 +69,47 @@ Car.findByIdAndRemove("5a9f9788be0e5c12905fbd84",(err, doc)=>{ //pass the Id
     if(err) return console.log(err)
     console.log(doc)
 })*/
-
+/*
 Car.remove({brand:"BMW"}, (err, doc)=>{   
     if(err)  return console.log(err)
     console.log(doc)
+})*/
+/*Udpate*/
+//update
+//01 Car.update({_id:"5a9fb880c9589cf8b9fdfa33"})
+//02 Car.update({_id:"5a9fb880c9589cf8b9fdfa33"},{})
+/*Car.update({_id:"5a9fb880c9589cf8b9fdfa33"},{
+    $set:{
+        year:2011
+    }
+}, (err, doc)=>{
+    console.log(doc)
+})*/
+/*
+Car.findByIdAndUpdate("5a9fb880c9589cf8b9fdfa33",{
+    $set:{
+        year:2050
+    }},{new:true},
+    (err, doc)=>{
+        console.log(doc)
+    })
+*/
+Car.findById("5a9fb880c9589cf8b9fdfa33",(err, car)=>{
+if(err) return console.log(err)
+car.set({
+    year:2000
 })
+car.save((err, doc)=>{
+    console.log(doc)
+})
+})
+
+
+
+
+
+
+
+
 
 
